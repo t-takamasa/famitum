@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Article;
 use Inertia\Inertia;
+// use Illuminate\Http\Request;
 
 class TopController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Top');
+        $articles = Article::all();
+        return Inertia::render('Top', ['articles' => $articles]);
     }
 }

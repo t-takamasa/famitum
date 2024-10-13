@@ -19,3 +19,8 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+
+
+.DS_Store
+_ide_helper.php
+public/sitemap.xml

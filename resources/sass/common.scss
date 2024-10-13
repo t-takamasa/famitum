@@ -1,0 +1,146 @@
+@use "mixin";
+@use "const";
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0E68C;
+    color: #333;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+
+/* 親コンテナ */
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* 各記事（カード）のデザイン */
+.article-item {
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article-item a {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    display: block;
+    padding: 15px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 画像スタイル */
+.article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+}
+
+/* タイトルのスタイル */
+.article-title {
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+}
+
+
+/* メインコンテンツ */
+main {
+    padding: 40px;
+    background-color: white;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.single_contents h1 {
+    font-size: 2.5rem;
+    color: #0073E6;
+    margin-bottom: 20px;
+}
+
+.single_contents .article-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.single_contents p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Inertiaリンクのボタン風デザイン */
+.inertia-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F0E68C;
+    color: #0073E6;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.inertia-link:hover {
+    background-color: #d9c56b;
+    color: #005bb5;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .inertia-link {
+        font-size: 1rem;
+    }
+}
+
+
+/* メディアクエリでレスポンシブ対応 */
+@media (max-width: 768px) {
+    .article-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-item {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+

@@ -1,7 +1,7 @@
 <template>
     <div>
-      <Header />
-      <main>
+        <Header />
+        <main>
             <h1>記事一覧</h1>
             <ul class="article-list">
                 <li v-for="article in articles" :key="article.id" class="article-item">
@@ -13,22 +13,20 @@
                 </li>
             </ul>
         </main>
-      <Footer />
+        <Footer />
     </div>
-  </template>
+</template>
   
-  <script>
-  import Header from '@/Components/Header.vue';
-  import Footer from '@/Components/Footer.vue';
-  
-  export default {
-    name: 'Top',
-    components: {
-      Header,
-      Footer
-    },
-    props: {
-        articles: Array
+<script>
+    import Header from '@/Components/Header.vue';
+    import Footer from '@/Components/Footer.vue';
+    export default {
+        components: {
+            Header,
+            Footer
+        },
+        props: {
+            articles: Array
+        }
     }
-  };
-  </script>
+</script>

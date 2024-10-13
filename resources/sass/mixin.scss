@@ -1,0 +1,21 @@
+@use 'const';
+
+@mixin pc-screen() {
+    @media screen and (min-width: const.$breakpoint-sp) {
+        @content;
+    }
+}
+
+@mixin tablet-screen() {
+    $breakpoint-max: const.$breakpoint-tablet - 1;
+    @media screen and (min-width: const.$breakpoint-sp) and (max-width: $breakpoint-max) {
+        @content;
+    }
+}
+
+@mixin sp-screen() {
+    $breakpoint-max: const.$breakpoint-sp - 1;
+    @media screen and (max-width: $breakpoint-max) {
+        @content;
+    }
+}
