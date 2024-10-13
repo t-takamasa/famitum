@@ -3,6 +3,8 @@
 // use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\TopController;
+use App\Http\Controllers\OtherController;
+
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +15,9 @@ use Inertia\Inertia;
 Route::get('/', [TopController::class, 'index'])->name('top');
 Route::get('/articles', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/articles/{article_id}', [ArticleController::class, 'show'])->name('articles.show');
+
+Route::get('/privacy-policy', [OtherController::class, 'privacy'])->name('privacy');
+
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [

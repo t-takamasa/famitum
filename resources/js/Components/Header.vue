@@ -1,7 +1,7 @@
 <template>
     <header>
       <a href="/">
-        <img :src="`/img/logo.png`" alt="" class="famitum">
+        <img :src="`/img/logo.png`" alt="" class="famitum img_anchor">
       </a>
       <nav>
         <ul>aaa
@@ -35,10 +35,5 @@
   nav ul li {
     display: inline;
     margin-right: 1em;
-  }
-  
-  nav ul li a {
-    color: #333;
-    text-decoration: none;
   }
   </style>

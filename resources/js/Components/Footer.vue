@@ -2,7 +2,7 @@
     <footer>
       <nav>
         <ul>
-          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
           <li><a href="/contact">Contact Us</a></li>
         </ul>
       </nav>
@@ -32,10 +32,5 @@
   footer nav ul li {
     display: inline;
     margin: 0 1em;
-  }
-  
-  footer nav ul li a {
-    color: white;
-    text-decoration: none;
   }
   </style>

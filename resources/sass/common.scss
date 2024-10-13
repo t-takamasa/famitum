@@ -1,11 +1,141 @@
 @use "mixin";
 @use "const";
+@use "reset";
 
 
 body {
     font-family: Arial, sans-serif;
     background-color: #F0E68C;
     color: #333;
+}
+
+a {
+    border-bottom: 1px dashed const.$anchorBlue;
+    color: const.$anchorBlue;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color .2s, background .2s, border .2s;
+    
+    &.img_anchor {
+        border: none;
+        padding: 0;
+    }
+}
+a:hover {
+    background-color: const.$anchorBlue;
+    color: const.$mainWhite;
+
+    &.img_anchor {
+        background-color: const.$mainWhite;
+        padding: 0;
+    }
+}
+img[usemap] {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+li {
+    list-style: none;
+}
+h1 {
+    font-size: 28px;
+    @include mixin.sp-screen() {
+        font-size: 4.6vw;
+    }
+}
+h2 {
+    font-size: 26px;
+    @include mixin.sp-screen() {
+      font-size: 4.3vw;
+    }
+  
+    span {
+      font-size: 26px;
+      @include mixin.sp-screen() {
+        font-size: 4.3vw;
+        }
+    }
+}
+h3 {
+    font-size: 24px;
+    @include mixin.sp-screen() {
+      font-size: 4.0vw;
+    }
+  
+    span {
+      font-size: 24px;
+      @include mixin.sp-screen() {
+        font-size: 4.0vw;
+        }
+    }
+}
+h4 {
+    font-size: 22px;
+    @include mixin.sp-screen() {
+      font-size: 3.7vw;
+    }
+  
+    span {
+      font-size: 22px;
+      @include mixin.sp-screen() {
+        font-size: 3.7vw;
+        }
+    }
+}
+.mt-0 {
+    margin-top: 0px !important;
+}
+.mt-8 {
+    @include mixin.pc-screen() {
+      margin-top: 8px;
+    }
+    @include mixin.sp-screen() {
+      margin-top: 4px;
+    }
+}
+.mt-12 {
+    @include mixin.pc-screen() {
+      margin-top: 12px;
+    }
+    @include mixin.sp-screen() {
+      margin-top: 8px;
+    }
+}
+.mt-24 {
+    @include mixin.pc-screen() {
+      margin-top: 24px;
+    }
+    @include mixin.sp-screen() {
+      margin-top: 16px;
+    }
+}
+.mt-36 {
+    @include mixin.pc-screen() {
+      margin-top: 36px;
+    }
+    @include mixin.sp-screen() {
+      margin-top: 24px;
+    }
+}
+.mt-48 {
+    @include mixin.pc-screen() {
+      margin-top: 48px;
+    }
+    @include mixin.sp-screen() {
+      margin-top: 36px;
+    }
+}
+.mr-8 {
+    margin-right: 8px;
+}
+.mb-24 {
+    @include mixin.pc-screen() {
+      margin-bottom: 24px;
+    }
+    @include mixin.sp-screen() {
+      margin-bottom: 16px;
+    }
 }
 
 header {
