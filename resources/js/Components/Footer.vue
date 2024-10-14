@@ -6,7 +6,7 @@
           <li><a href="/contact">Contact Us</a></li>
         </ul>
       </nav>
-      <p>&copy; 2024 Famitum. All rights reserved.</p>
+      <p class="mt-12">&copy; 2024 Famitum. All rights reserved.</p>
     </footer>
   </template>
   

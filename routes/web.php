@@ -16,6 +16,7 @@ Route::get('/', [TopController::class, 'index'])->name('top');
 Route::get('/articles', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/articles/{article_id}', [ArticleController::class, 'show'])->name('articles.show');
 
+Route::get('/contact', [OtherController::class, 'contact'])->name('contact');
 Route::get('/privacy-policy', [OtherController::class, 'privacy'])->name('privacy');
 
 

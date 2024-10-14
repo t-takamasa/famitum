@@ -11,4 +11,9 @@ class OtherController extends Controller
     {
         return Inertia::render('Other/Privacy');
     }
+
+    public function contact()
+    {
+        return Inertia::render('Other/Contact');
+    }
 }
