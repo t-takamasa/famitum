@@ -2,16 +2,18 @@
     <div>
       <Header />
       <main>
-            <h1>記事一覧</h1>
+        <div class="inner mt-36">
+          <h1>記事一覧</h1>
             <ul class="article-list">
                 <li v-for="article in articles" :key="article.id" class="article-item">
                     <a :href="`/articles/${article.id}`">
-                        <img :src="`/img/articles/${article.id}/main.jpg`" alt="" class="article-image">
+                        <img :src="`/img/articles/${article.id}-main.jpg`" alt="" class="article-image">
                         <h2 class="article-title">{{ article.title }}</h2>
                     </a>
                     <!-- <inertia-link :href="route('articles.show', article.id)">詳細を見る</inertia-link> -->
                 </li>
             </ul>
+          </div>
         </main>
       <Footer />
     </div>

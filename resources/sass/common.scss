@@ -156,6 +156,7 @@ header {
 
 /* 各記事（カード）のデザイン */
 .article-item {
+    display: flex;
     max-width: 300px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -170,6 +171,7 @@ header {
     max-width: 300px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    border-bottom: none;
 }
 
 .article-item:hover {
@@ -195,33 +197,106 @@ header {
 
 /* メインコンテンツ */
 main {
-    padding: 40px;
-    background-color: white;
+    // padding: 40px;
+    // background-color: white;
+    // max-width: 1200px;
+    // margin: 40px auto;
+    // border-radius: 8px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.inner {
     max-width: 1200px;
-    margin: 40px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 12px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.single_contents h1 {
-    font-size: 2.5rem;
-    color: #0073E6;
-    margin-bottom: 20px;
-}
 
-.single_contents .article-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
+.single_contents {
+    h1 {
+        @include mixin.sp-screen() {
+          font-size: 4.5vw;
+        }
+    }
+    h2 {
+        background: const.$backrBlue;
+        border-left: 8px solid const.$LightBlue;
+        line-height: 1.5;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        @include mixin.pc-screen() {
+          padding: 12px;
+        }
+        @include mixin.sp-screen() {
+          font-size: 4.2vw;
+          padding: 8px;
+        }
+    }
 
-.single_contents p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #333;
-}
+    h3 {
+        border-left: 8px solid const.$LightBlue;
+        font-weight: 600;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 4px 12px;
+        @include mixin.sp-screen() {
+          font-size: 5vw;
+        }
+    }
+    h4 {
+        border-bottom: 2px dashed const.$LightBlue;
+        font-size: 20px;
+        margin-top: 28px;
+        margin-bottom: 16px;
+        padding: 8px;
+        @include mixin.sp-screen() {
+          font-size: 4.5vw;
+        }
+    }
 
+    p {
+        line-height: 1.6;
+        color: #333;
+        line-height: 1.9;
+        font-size: 1.2rem;
+        @include mixin.sp-screen() {
+          font-size: 3.5vw;
+        }
+
+        &+p {
+          margin-top: 1.5em;
+        }
+    }
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+        height: auto;
+        display: block;
+        @include mixin.pc-screen() {
+          margin: 24px 0;
+        }
+        @include mixin.sp-screen() {
+          margin: 16px 0;
+        }
+    }
+    ul,ol {
+        background-color: const.$cloudBlue;
+        border-radius: 8px;
+        margin-top: 24px;
+        margin-bottom: 12px;
+        padding: 8px 8px 8px 28px;
+
+        li {
+          list-style: disc;
+        }
+    }
+    ol {
+        li {
+          list-style: auto;
+        }
+    }
+}
 /* Inertiaリンクのボタン風デザイン */
 .inertia-link {
     display: inline-block;

@@ -2,34 +2,37 @@
     <div>
         <Header />
         <main>
-            <h1>お問い合わせフォーム</h1>
-            <form @submit.prevent="submitForm">
-            <div>
-                <label for="name">お名前:</label>
-                <input type="text" v-model="form.name" required>
+            <div class="inner mt-36">
+                <h1>お問い合わせフォーム</h1>
+                <form @submit.prevent="submitForm">
+                <div>
+                    <label for="name">お名前:</label>
+                    <input type="text" v-model="form.name" required>
+                </div>
+
+                <div>
+                    <label for="email">メールアドレス:</label>
+                    <input type="email" v-model="form.email" required>
+                </div>
+
+                <div>
+                    <label for="message">メッセージ:</label>
+                    <textarea v-model="form.message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">送信</button>
+
+                <div v-if="errors.length">
+                    <ul>
+                    <li v-for="(error, index) in errors" :key="index">{{ error }}</li>
+                    </ul>
+                </div>
+
+                <p v-if="successMessage">{{ successMessage }}</p>
+                </form>
+
             </div>
-
-            <div>
-                <label for="email">メールアドレス:</label>
-                <input type="email" v-model="form.email" required>
-            </div>
-
-            <div>
-                <label for="message">メッセージ:</label>
-                <textarea v-model="form.message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit">送信</button>
-
-            <div v-if="errors.length">
-                <ul>
-                <li v-for="(error, index) in errors" :key="index">{{ error }}</li>
-                </ul>
-            </div>
-
-            <p v-if="successMessage">{{ successMessage }}</p>
-            </form>
-            </main>
+        </main>
         <Footer />
     </div>
 </template>
